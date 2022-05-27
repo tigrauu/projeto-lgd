@@ -6,4 +6,4 @@
 <p>Seu objetivo é calcular a demanda de energia elétrica<br>
    de uma casa, utilizando as formulas da RECON-LIGHT.</p>
    
-<h2>Acesse o site em: <a href="https://tigrauu.github.io/projeto-lgd/" target="_blank">Los Gados Energy</a>.</h2>
+<h2>Acesse o site em: <a href="https://tigrauu.github.io/projeto-lgd/" target="_blank" rel"external">Los Gados Energy</a>.</h2>
