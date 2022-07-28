@@ -1,41 +1,222 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="" type="image/x-icon">
-    <title>Los Gados Energy</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../projeto-lgd/imgs/logo branca.png" type="image/icon">
+        <link rel="stylesheet" href="../projeto-lgd/css/style.css">
+        <script src="../projeto-lgd/script/script.js" defer></script>
+        <title>Los Gados Energy</title>
+    </head>
 
-    <header>
-        <img src="./img/perfil.png" alt="" id="logo">
-        <h1 id="lgd">Los Gados Energy</h1>
-    </header>
+    <body>
 
-    <div class="corpo">
+        <header>
+            <img src="../projeto-lgd/imgs/logo branca.png" alt="" id="logo">
+            <h1 id="lgd">Los Gados Energy</h1>
+        </header>
 
-        <nav>
-            <img src="./img/paper.png" alt="" id="paper">
-        </nav>
+        <div class="corpo">
 
-        <main>
-            <div class="dados">
-                <input type="number" id="input1" placeholder="Largura.">
-                <input type="number" id="input2" placeholder="Altura.">
-                <button>Calcular</button>
-            </div>
+            <nav>
 
-            <aside>
-            
-            </aside>
-        </main>
+            </nav>
 
-    </div>
+            <main>
+                <div class="dados" id="dados">
+                    <div class="inputContainer">
+                        <input type="number" id="inputArea" required class="input" required>
+                        <label for="inputArea" class="input-label">Área da casa (em m²):</label>
+                    </div>
+                    
+                    <div class="inputContainer">
+                        <input type="number" id="inputC1" required class="input" required>
+                        <label for="inputC1" class="input-label">Potência das iluminações e tomadas (em kVA):</label>
+                    </div>
 
-    <footer>
-    </footer>
-</body>
+                    <div class="inputContainer"> 
+                        <input type="number" id="inputC2" required class="input" required>
+                        <label for="inputC2" class="input-label">Potência dos aparelhos para aquecimento (em kVA):</label>
+                    </div>
+
+                    <div class="inputContainer">                      
+                        <input type="number" id="numChuveiros" required class="input" required>
+                        <label for="numChuveiros" class="input-label">Insira a quantidade de chuveiros na sua residência:</label>
+                    </div>
+                    
+                    <div class="inputContainer">
+                        <h1>Marque o(s) tipo(s) de ar(es) condicionado(s) instalado(s) em sua casa:</h1>
+                        
+                        <br>
+
+                        <div class="check">
+                            <input type="checkbox" id="checkJanela" onclick="checking()">
+                            <label for="checkJanela">Janela</label> 
+                        </div>
+
+                        <br>
+
+                        <div class="check">
+                            <input type="checkbox" id="checkSplit" onclick="checking()">
+                            <label for="checkSplit">Split</label> 
+                        </div>
+                    </div>
+
+                    <div class="inputContainer" id="input1Janela">
+                        <input type="number" id="janelaMenor9k" required class="input" required>
+                        <label for="janelaMenor9k" class="input-label">Quantos deles (JANELA) têm uma potência MENOR OU IGUAL a 9000 BTU/h?</label>
+                    </div>
+
+                    <div class="inputContainer" id="input2Janela">
+                        <input type="number" id="janelaMenor14k" required class="input" required>
+                        <label for="janelaMenor14k" class="input-label">Quantos deles (JANELA) têm uma potência de 9001 a 14000 BTU/h?</label>
+                    </div>
+
+                    <div class="inputContainer" id="input3Janela">
+                        <input type="number" id="janelaMaior14k" required class="input" required>
+                        <label for="janelaMaior14k" class="input-label">Quantos deles (JANELA) têm uma potência maior que 14000 BTU/h?</label>
+                    </div>
+
+                    <div class="inputContainer" id="input1Split">
+                        <input type="number" id="splitMenor10k" required class="input" required>
+                        <label for="splitMenor10k" class="input-label">Quantos deles (SPLIT) têm uma potência MENOR OU IGUAL a 10000 BTU/h?</label>
+                    </div>
+
+                    <div class="inputContainer" id="input2Split">
+                        <input type="number" id="splitMenor15k" required class="input" required>
+                        <label for="splitMenor15k" class="input-label">Quantos deles (SPLIT) têm uma potência de 10001 a 15000 BTU/h?</label>
+                    </div>
+
+                    <div class="inputContainer" id="input3Split">
+                        <input type="number" id="splitMenor20k" required class="input" required>
+                        <label for="splitMenor20k" class="input-label">Quantos deles (SPLIT) têm uma potência de 15001 a 20000 BTU/h?</label>
+                    </div>
+
+                    <div class="inputContainer" id="input4Split">
+                        <input type="number" id="splitMenor30k" required class="input" required>
+                        <label for="splitMenor30k" class="input-label">Quantos deles (SPLIT) têm uma potência de 20001 a 30000 BTU/h?</label>
+                    </div>
+
+                    <div class="inputContainer" id="input5Split">
+                        <input type="number" id="splitMaior30k" required class="input" required>
+                        <label for="splitMaior30k" class="input-label">Quantos deles (SPLIT) têm uma potência maior que 30000 BTU/h?</label>
+                    </div>
+
+                    <div class="inputContainer" id="bombasContainer">
+                        <input type="number" id="numBombas" required class="input" required>
+                        <label for="numBombas" class="input-label">Insira a quantidade de bombas d'água na sua residência:</label>
+
+                        <br>
+
+                        <button class="shimmer-btn" type="submit" onclick="confBombas()">Confirmar nº de bombas</button>
+                    </div>
+
+                    <div class="inputContainer" id="bombaUnica">
+                        <h1>Selecione a potência de sua bomba d'água (em CV):</h1>
+
+                        <select class="select" name="valueBombaUnica" id="selectBombaUnica">
+                            <option value="0.25">1/4</option>
+                            <option value="0.33">1/3</option>
+                            <option value="0.5">1/2</option>
+                            <option value="0.75">3/4</option>
+                            <option value="1">1</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="7.5">7.5</option>
+                            <option value="10">10</option>
+                            <option value="12.5">12.5</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                            <option value="60">60</option>
+                            <option value="75">75</option>
+                            <option value="100">100</option>
+                            <option value="125">125</option>
+                            <option value="150">150</option>
+                            <option value="200">200</option>
+                        </select>
+                    </div>
+
+                    <div class="inputContainer" id="radioContainer">
+                        <h1>Elas têm a mesma potência (em CV)?</h1>
+
+                        <input type="radio" name="bomba" id="radioSim" onclick="checkRadio()">
+                        <label for="radioSim">Sim</label>
+
+                        <br>
+                        <br>
+
+                        <input type="radio" name="bomba" id="radioNao" onclick="checkRadio()">
+                        <label for="radioNao">Não</label>
+                    </div>
+
+                    <div class="inputContainer" id="bombasIguais">
+                        <h1>Selecione a potência de suas bombas d'água (em CV:)</h1>
+
+                        <select name="valueBombasIguais" id="selectBombasIguais">
+                            <option value="0.25">1/4</option>
+                            <option value="0.33">1/3</option>
+                            <option value="0.5">1/2</option>
+                            <option value="0.75">3/4</option>
+                            <option value="1">1</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="7.5">7.5</option>
+                            <option value="10">10</option>
+                            <option value="12.5">12.5</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                            <option value="60">60</option>
+                            <option value="75">75</option>
+                            <option value="100">100</option>
+                            <option value="125">125</option>
+                            <option value="150">150</option>
+                            <option value="200">200</option>
+                        </select>
+                    </div>
+
+                    <!--DIVs NOVAS-->
+
+                    <!--FIM DIV's NOVAS-->
+
+                    <button class="shimmer-btn" type="submit" id="botaoCalc" onclick="calc()">Calcular</button>
+                </div>
+
+                <aside>
+                    <div>
+                        <h1 id="h1Area"></h1>
+                        <h1 id="c1Area"></h1>
+                        <h1 id="c1Cargas"></h1>
+                        <h1 class="demanda" id="h1D1"></h1>
+                        <h1 id="h1C2"></h1>
+                        <h1 class="demanda" id="h1D2"></h1>
+                        <h1 id="h1C3"></h1>
+                        <h1 class="demanda" id="h1D3"></h1>
+                        <h1 id="h1C5"></h1>
+                        <h1 class="demanda" id="h1D5"></h1>
+                        <h1 id="h1CT"></h1>
+                        <h1 class="demanda" id="h1DT"></h1>
+                    </div>
+                </aside>
+            </main>
+
+        </div>
+
+        <footer>
+        </footer>
+    </body>
 </html>
